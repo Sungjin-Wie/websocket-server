@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Sungjin-Wie <tmdwls1203@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "http": "^0.0.1-security",
     "python-shell": "^2.0.3",
     "websocket": "^1.0.33"

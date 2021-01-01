@@ -1,11 +1,21 @@
 const SocketServer = require("websocket").server;
 const http = require("http");
 let { PythonShell } = require("python-shell");
+var express = require('express');
+var app = express();
 
-const server = http.createServer((req, res) => {});
+// const server = http.createServer((req, res) => {
+//   console.log((new Date()) + " Received request for " + req.url);
+//   res.writeHead(200);
+//   res.end();
+// });
 
-server.listen(3000, () => {
-  console.log("Listening on port 3000...");
+var server = http.createServer(app).listen(80, function () {
+  console.log('foo');
+});
+
+app.get("/", (req, res) => {
+  res.send("foo");
 });
 
 wsServer = new SocketServer({ httpServer: server });
@@ -19,8 +29,10 @@ wsServer.on("request", (req) => {
   console.log(connections);
 
   connection.on("message", (mes) => {
+    console.log(connections);
+    console.log(mes);
     PythonShell.run(
-      "/Users/sungjin/dev/socketserver/Inference/Inference.py",
+      "/home/ubuntu/server/Inference/Inference.py",
       null,
       (err, data) => {
         if (err) {

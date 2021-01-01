@@ -58,8 +58,8 @@ def recon(audio,model, mean, std,b):
 def run(feat):
     # Load model
     model = M.Load_model()
-    mean = np.load('/Users/sungjin/dev/socketserver/Inference/mean15dB.npy')
-    std = np.load('/Users/sungjin/dev/socketserver/Inference/std15dB.npy')
+    mean = np.load('/home/ubuntu/server/Inference/mean15dB.npy')
+    std = np.load('/home/ubuntu/server/Inference/std15dB.npy')
     
     B=1.25
     reconstructed = recon(feat, model, mean,std,B)

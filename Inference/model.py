@@ -153,7 +153,7 @@ def Load_model():
     기존에 저장된 모델을 불러와서 
     위 모델에 탑재합니다.(파라미터들을 입력해줍니다.)
     '''
-    checkpoint = torch.load('Unet_Model_param.tar')
+    checkpoint = torch.load('/home/ubuntu/server/Unet_Model_param.tar')
     model.load_state_dict(checkpoint['state_dict'])
     
     return model

@@ -7,11 +7,11 @@
 import run as R
 from scipy.io import wavfile
 
-fs, feat  = wavfile.read(r'/Users/sungjin/dev/socketserver/Inference/cafebefore.wav')
+fs, feat  = wavfile.read(r'/home/ubuntu/server/Inference/cafebefore.wav')
 s = R.run(feat)
-wavfile.write("/Users/sungjin/dev/socketserver/Inference/cafeafter.wav", 16000, s)
+wavfile.write("/home/ubuntu/server/Inference/cafeafter.wav", 16000, s)
 print("finished")
 
-import IPython.display as ipd
-ipd.Audio('output.wav')
+# import IPython.display as ipd
+# ipd.Audio('output.wav')
 
