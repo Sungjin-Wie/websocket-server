@@ -6,9 +6,10 @@
 
 import run as R
 from scipy.io import wavfile
-
+# 절대경로
 fs, feat  = wavfile.read(r'/home/ubuntu/server/before.wav')
 s = R.run(feat)
+# 절대경로
 wavfile.write("/home/ubuntu/server/after.wav", 16000, s)
 print("finished")
 

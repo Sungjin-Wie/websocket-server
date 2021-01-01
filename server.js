@@ -6,8 +6,8 @@ var app = express();
 let fs = require('fs');
 let wavConverter = require('wav-converter');
 
-var data = fs.readFileSync("./Inference/cafeafter.wav");
-console.log(data);
+// var data = fs.readFileSync("./Inference/cafeafter.wav");
+// console.log(data);
 
 // var pcmData = wavConverter.decodeWav(data);
 // console.log(pcmData);
@@ -67,6 +67,7 @@ wsServer.on("request", (req) => {
     });
     fs.writeFileSync('./before.wav', wavData);
     PythonShell.run(
+      //Inference.py 파일 절대경로
       "/home/ubuntu/server/Inference/Inference.py",
       null,
       (err, data) => {
@@ -90,6 +91,7 @@ wsServer.on("request", (req) => {
           console.log(connections);
           connections.forEach((element) => {
             // if (element != connection) 
+            // 테스트 목적으로 되돌리기 위해 윗줄 주석 처리
             element.sendUTF(encodedAfterToBase64);
           });
         }

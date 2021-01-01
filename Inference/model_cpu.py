@@ -135,6 +135,7 @@ def Load_model():
     stack_num = 7
     model = UNet(1,1, stack_num, n_freq)
     device = torch.device('cpu')
+    # 절대경로
     model.load_state_dict(torch.load('/home/ubuntu/server/Inference/Unet_Model_param_cpu.pt',map_location=device))
     
     return model

@@ -57,6 +57,7 @@ def recon(audio,model, mean, std,b):
 
 def run(feat):
     # Load model
+    # 절대경로
     model = M.Load_model()
     mean = np.load('/home/ubuntu/server/Inference/mean15dB.npy')
     std = np.load('/home/ubuntu/server/Inference/std15dB.npy')
