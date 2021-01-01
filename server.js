@@ -86,8 +86,11 @@ wsServer.on("request", (req) => {
           console.log(decodedAfterToPCM);
           let encodedAfterToBase64 = base64encode(decodedAfterToPCM);
           console.log("encoded to base64 text");
+          console.log(encodedAfterToBase64);
+          console.log(connections);
           connections.forEach((element) => {
-            if (element != connection) element.sendUTF(encodedAfterToBase64);
+            // if (element != connection) 
+            element.sendUTF(encodedAfterToBase64);
           });
         }
       }
