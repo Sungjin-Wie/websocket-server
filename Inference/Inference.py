@@ -7,9 +7,9 @@
 import run as R
 from scipy.io import wavfile
 
-fs, feat  = wavfile.read(r'/home/ubuntu/server/Inference/cafebefore.wav')
+fs, feat  = wavfile.read(r'/home/ubuntu/server/before.wav')
 s = R.run(feat)
-wavfile.write("/home/ubuntu/server/Inference/cafeafter.wav", 16000, s)
+wavfile.write("/home/ubuntu/server/after.wav", 16000, s)
 print("finished")
 
 # import IPython.display as ipd
